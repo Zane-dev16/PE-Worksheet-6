@@ -11,3 +11,12 @@ mean_y <- sum_y/n
 c(mean_x, mean_y, mean_x2)
 
 b1_est <- (sum_xy - n * mean_x * mean_y) / (sum_x2 - n * mean_x^2)
+
+b0_est <- mean_y - b1_est * mean_x
+b0_est
+
+t <- (b0_est - h0_b0) / sqrt((1/n) + (mean_x^2 / (sum_x2 - n * mean_x^2)))
+t
+
+alpha <- 0.01
+c(qt(alpha/2, n-2), qt(1 - alpha/2, n-2))
